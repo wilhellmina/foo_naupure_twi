@@ -57,7 +57,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <TreatSpecificWarningsAsErrors>4715</TreatSpecificWarningsAsErrors>
-      <AdditionalIncludeDirectories>C:\Users\scarlet\Desktop\SDK\WTL10_10320_Release\Include;..;../..</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Library\boost_1_76_0\include\boost-1_76;C:\Users\scarlet\Desktop\SDK\WTL10_10320_Release\Include;..;../..</AdditionalIncludeDirectories>
       <FloatingPointModel>Fast</FloatingPointModel>
     </ClCompile>
     <Link>
@@ -82,7 +82,7 @@
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <StringPooling>true</StringPooling>
       <OmitFramePointers>true</OmitFramePointers>
-      <AdditionalIncludeDirectories>..;../..;C:\Users\scarlet\Desktop\SDK\WTL10_10320_Release\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Library\boost_1_76_0\include\boost-1_76;..;../..;C:\Users\scarlet\Desktop\SDK\WTL10_10320_Release\Include</AdditionalIncludeDirectories>
       <FloatingPointModel>Fast</FloatingPointModel>
       <PreprocessorDefinitions>NDEBUG;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
@@ -97,6 +97,7 @@
       <TargetMachine>MachineX86</TargetMachine>
       <AdditionalDependencies>../shared/shared.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AssemblyDebug>false</AssemblyDebug>
+      <AdditionalLibraryDirectories>C:\Library\boost_1_76_0\stage\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

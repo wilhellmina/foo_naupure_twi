@@ -5,7 +5,7 @@
 
 
 //playback info
-file_info_impl track_info;
+file_info_impl *track_info;
 
 //PB
 unsigned PlaybackCallback::get_flags()
@@ -15,7 +15,7 @@ unsigned PlaybackCallback::get_flags()
 
 void PlaybackCallback::on_playback_new_track(metadb_handle_ptr track)
 {
-	track->get_info(track_info);
+	track->get_info(*track_info);
 }
 
 play_callback_static_factory_t<PlaybackCallback> playbackCallback;

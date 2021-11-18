@@ -1,3 +1,3 @@
 # ツイッターにブラウザからなうぷれするやつ
 
-Plabackにあるはず
+PlaybackのPullDownにあるはず

@@ -5,7 +5,7 @@
 
 
 //playback info
-file_info_impl *track_info;
+file_info_impl track_info;
 
 //get trackinfo on newtrack
 unsigned PlaybackCallback::get_flags()
@@ -15,7 +15,7 @@ unsigned PlaybackCallback::get_flags()
 
 void PlaybackCallback::on_playback_new_track(metadb_handle_ptr track)
 {
-	track->get_info(*track_info);
+	track->get_info(track_info);
 }
 
 play_callback_static_factory_t<PlaybackCallback> playbackCallback;
@@ -62,13 +62,14 @@ GUID Tweet_Button_impl::get_parent()
 
 void Tweet_Button_impl::execute(t_uint32 p_index, service_ptr_t<service_base> p_callback)
 {
-	Kokura_Asahi::tweet(track_info);
+	Kokura_Asahi::tweet(&track_info);
 }
 
 bool Tweet_Button_impl::get_display(t_uint32 p_index, pfc::string_base& p_out, t_uint32& p_flags)
 {
 	get_name(p_index, p_out);
-	p_flags = sort_priority_last; //showing button on middle of bunch others is just dumb idea
+	//p_flags = sort_priority_last; //showing button on middle of bunch others is just dumb idea
+	p_flags = 0;
 	return true;
 }
 

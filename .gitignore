@@ -265,3 +265,6 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+
+# foobar2000 SDK (extract SDK-*.7z here, see README)
+sdk/

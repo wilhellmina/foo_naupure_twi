@@ -7,11 +7,6 @@
 #include <stdio.h>
 #include <sys/stat.h>
 
-#include "tweet.h"
-#include "webclient.h"
-#include "oauth.h"
-#include "base64.h"
-
 
 namespace Kokura_Asahi
 {
@@ -76,35 +71,5 @@ namespace Kokura_Asahi
 		//shellexecute
 		HINSTANCE ret = ShellExecuteA(0, "open", data_encoded.c_str(), NULL, NULL, SW_SHOWNORMAL);
 		//error handling
-	}
-
-	void postVIAPI(file_info_impl *track_info) {
-		static const char consumer_key[] = { "4rdXQNvIFFFPS7alwvm1gntWD" };
-		static const char consumer_sec[] = { "reLF2XqLRsbjNpnPn340iOFvPM8x9d4MF4R2pr3T42m0YSfLQ8" };
-		static const char accesstoken[] = { "1041854270381776896-EZixmsAEYnAgwVxbVEFdhWXuKY8Fqs" };
-		static const char accesstoken_sec[] = { "44uX5uwz7EjxNcESxJjslonQqdzsv3E8Xu8nlkdpNoEwU" };
-
-
-		WebClient::initialize();
-		TwitterClient tc(consumer_key, consumer_sec, accesstoken, accesstoken_sec);
-
-		std::string nowplaying;
-
-		const char* track_artist = track_info->meta_get("artist", 0);
-		if (track_artist == nullptr) {
-			track_artist = "";
-		}
-		const char* track_title = track_info->meta_get("title", 0);
-		if (track_title == nullptr) {
-			track_title = "";
-		}
-		const char* track_album = track_info->meta_get("album", 0);
-		if (track_album == nullptr) {
-			track_album = "";
-		}
-
-		nowplaying = std::string(track_title) + ("(") + std::string(track_artist) + (")") + (" / ") + std::string(track_album);
-
-		tc.tweet(nowplaying);
 	}
 }

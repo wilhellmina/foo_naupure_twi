@@ -1,1 +1,2 @@
-#include <helpers/foobar2000+atl.h>
+#pragma once
+#include <SDK/foobar2000.h>

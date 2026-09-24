@@ -3,6 +3,7 @@
 #include <string>
 #include <sstream>
 #include <Windows.h>
+#include <iomanip>
 
 #include <stdio.h>
 #include <sys/stat.h>
@@ -37,7 +38,7 @@ namespace Kokura_Asahi
 			}
 			else {
 				//エンコードする場合は%記号と文字コードの16進数表示をストリームに入れる
-				out << '%' << std::hex << std::uppercase << charCode;
+				out << '%' << std::hex << std::uppercase << std::setw(2) << std::setfill('0') << charCode;
 			}
 		}
 		//ストリームの文字列をstringのインスタンスに代入しreturn
